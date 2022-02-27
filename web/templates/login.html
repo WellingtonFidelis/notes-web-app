@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<div class="mx-auto col-lg-8">
+  <form action="" method="post">
+    <h3 class="text-center">Login</h3>
+    <div class="row mb-1">
+      <div class="form-group">
+        <label for="email">E-mail address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your e-mail">
+      </div>
+    </div>
+    <div class="row mb-1">
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-1">Login</button>
+  </form>
+</div>
+{% endblock %}
