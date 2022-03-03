@@ -4,6 +4,32 @@
 
 {% block content %}
 <div>
-  <h1>This is the home page</h1>
+  <h1>Notes</h1>
+  <form action="" method="post">
+    <div class="mb-3">
+      <label for="note" class="form-label">What you need to do? Type in the follow box.</label>
+      <textarea class="form-control" id="note" name="note" rows="1"></textarea>
+    </div>
+    <div class="">
+      <button type="submit" class="btn btn-primary mb-3">Add Note</button>
+    </div>
+  </form>
+  <hr>
+  <ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col">
+            {{ note.data }}
+          </div>
+          <div class="col">
+            <button type="button" class="badge bg-danger" onclick="deleteNote({{ note.id }})">
+              Delete
+            </button>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
 {% endblock %}
