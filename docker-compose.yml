@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+    image: webapp:notes-web-app
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
